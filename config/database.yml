@@ -23,3 +23,21 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+
+
+#development:
+#  adapter: postgresql
+#  host: localhost
+#  encoding: utf8
+#  database: xxxdb_dev
+#  pool: 5
+#  username: wang
+#  password: wang
+#test:
+#  adapter: postgresql
+#  host: localhost
+#  encoding: utf8
+#  database: xxxdb_test
+#  pool: 5
+#  username: wang
+#  password: wang
