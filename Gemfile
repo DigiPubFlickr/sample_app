@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.1'
+#gem 'bcrypt-ruby', '3.0.1'
+gem 'bcrypt-ruby', '3.1.2'
+
+#暫定
+gem 'protected_attributes'
 
 #gem 'pg', '0.15.1'
 group :development do
@@ -12,9 +17,15 @@ group :development do
   gem 'guard-rspec', '2.5.0'
 end
 
+group :development do
+  gem 'annotate', '2.5.0'
+end
+
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  #gem 'cucumber'
+  #gem 'cucumber-rails'
 end
 
 # Use SCSS for stylesheets
