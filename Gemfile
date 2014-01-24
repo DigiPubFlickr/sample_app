@@ -26,6 +26,7 @@ group :test do
   gem 'capybara', '2.1.0'
   #gem 'cucumber'
   #gem 'cucumber-rails'
+  gem 'factory_girl_rails', '4.1.0'
 end
 
 # Use SCSS for stylesheets
