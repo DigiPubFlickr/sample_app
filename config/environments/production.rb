@@ -1,6 +1,11 @@
 SampleApp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # アプリケーションへのすべてのアクセスをSSL経由にし、
+  # Strict-Transport-Securityを使用し、
+  # secure cookiesを使用する。
+  config.force_ssl = true  
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
