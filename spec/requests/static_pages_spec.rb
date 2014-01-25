@@ -66,7 +66,7 @@
       #  #visit root_path
       #  expect(page).not_to have_title('| Home')
       #end
-      it { should have_selector('h1', text: 'Sample App') }
+      it { should have_selector('h1', text: 'Prototype') }
       it { should have_title(full_title('')) }
       it { should_not have_title(full_title('| Home')) }
     end
@@ -75,7 +75,7 @@
       before { visit root_path }
       it "should have the right links on the layout" do
         click_link "Sign up now!"
-        expect(page).should have_selector('h1', text:'Sign up' )
+        page.should have_selector('h1', text:'Sign up' )
         click_link "About"
         page.should have_title full_title('About Us')
         click_link "Help"
@@ -85,7 +85,8 @@
         click_link "Home"
         click_link "Sign up now!"
         page.should # fill in
-        click_link "sample app"
+        #click_link "sample app"
+        click_link "Prototype"
         page.should # fill in
       end
     end
