@@ -91,7 +91,10 @@ class UsersController < ApplicationController
     #  format.html { redirect_to users_url }
     #  format.json { head :no_content }
     #end
-    User.find(params[:id]).destroy
+    user = User.find(params[:id])
+    #User.find(params[:id]).destroy
+    redirect_to users_url if current_user?(user)
+    user.destroy
     flash[:success] = "User destroyed."
     redirect_to users_url
   end
@@ -117,9 +120,10 @@ class UsersController < ApplicationController
         redirect_to signin_url, notice: "Please sign in."
       end
     end
+
     def correct_user
       @user = User.find(params[:id])
-      #redirect_to(root_path) unless current_user?(@user)
-      redirect_to(root_path) unless current_user
+      redirect_to(root_path) unless current_user?(@user)
+      #redirect_to(root_path) unless current_user
     end
 end

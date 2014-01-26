@@ -6,6 +6,7 @@
         <%= gravatar_for @user, size: 40 %>
         <%= @user.name %>
       </h1>
+      <%= @user.admin?? " Administrator " : "" %> 
     </section>
   </aside>
 </div>
