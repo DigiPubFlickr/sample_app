@@ -1,15 +1,32 @@
 <% provide(:title, '') %>
 <br/>
-<div class="center hero-unit">
-  <h1>Welcome to the Prototype</h1>
-  
-  <h2>
-    受発注管理ツールプロトタイプ
-  </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>  
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to the Prototype</h1>
 
+    <h2>
+      プロトタイプ
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, 
+    		class: "btn btn-large btn-primary" %>
+  </div>
 
 <%= link_to image_tag("rubyonrails.png", size:"100x100", align:"left", alt: "Ruby on Rails"), 'http://rubyonrails.org/' %>
-
+<% end %> 
