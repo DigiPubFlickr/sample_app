@@ -10,6 +10,7 @@ SampleApp::Application.routes.draw do
   #get "static_pages/contact"
   #get '/',        to: 'static_pages#home'
   root            to: 'static_pages#home'
+  get '/menu',    to: 'static_pages#menu'
   get '/signup',  to: 'users#new'
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy', via: :delete
